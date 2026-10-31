@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance Birthday Surprise for Muneeb 💗</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --pink:#f4b4d0;
+ --deep:#cf719b;
+ --pale:#fff0f7;
+ --brown:#593522;
+ --text:#80576a;
+}
+body{
+ font-family:"Trebuchet MS",Arial,sans-serif;
+ background:#fff7fb;color:var(--text);
+ overflow-x:hidden;
+}
+.page{
+ display:none;min-height:100vh;padding:35px 15px 90px;
+ position:relative;overflow:hidden;text-align:center;
+ background:
+ radial-gradient(circle at 10% 15%,#ffe1ee 0 5px,transparent 6px),
+ radial-gradient(circle at 90% 80%,#ffe1ee 0 6px,transparent 7px),
+ linear-gradient(140deg,#fffafd,#fff0f7);
+}
+.page.active{
+ display:flex;flex-direction:column;align-items:center;
+ justify-content:center;animation:appear .6s ease;
+}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+h1{font-size:clamp(30px,6vw,52px);color:var(--deep);margin:12px}
+h2{font-size:clamp(23px,5vw,35px);color:var(--deep);margin:12px}
+p{font-size:18px;line-height:1.8;margin:10px auto;max-width:720px}
+.card{
+ width:min(92%,720px);padding:24px;margin:16px auto;
+ border:2px solid #f8c8dd;border-radius:28px;
+ background:#ffffffdf;box-shadow:0 10px 28px #d875a522;
+}
+button{
+ border:0;border-radius:30px;padding:13px 24px;margin:9px;
+ background:#e995bb;color:white;font-weight:bold;font-size:16px;
+ cursor:pointer;transition:.25s;box-shadow:0 5px 12px #e995bb44;
+}
+button:hover{background:#d875a5;transform:translateY(-3px)}
+input{
+ width:min(85%,320px);padding:14px;border:2px solid #f3bad3;
+ border-radius:25px;text-align:center;font-size:16px;outline:none;margin:14px;
+}
+.float{
+ position:absolute;font-size:28px;pointer-events:none;
+ animation:float 4s ease-in-out infinite;
+}
+.f1{top:8%;left:7%}.f2{top:16%;right:8%}
+.f3{bottom:15%;left:8%}.f4{bottom:17%;right:9%}
+@keyframes float{50%{transform:translateY(-22px) rotate(12deg)}}
+
+/* PHOTO GALLERY */
+.gallery{
+ display:flex;flex-wrap:wrap;justify-content:center;
+ gap:15px;margin:20px auto;max-width:850px;
+}
+.gallery img{
+ width:min(40%,190px);height:220px;object-fit:cover;
+ border:7px solid white;border-radius:18px;
+ box-shadow:0 5px 18px #d875a544;transform:rotate(-2deg);
+}
+.gallery img:nth-child(even){transform:rotate(3deg)}
+.gallery img:hover{transform:scale(1.06)}
+
+/* MOCHI CAT - inspired by your reference pictures */
+.cat-wrap{
+ width:230px;height:225px;margin:8px auto 5px;
+ display:flex;align-items:center;justify-content:center;
+ position:relative;
+}
+.mochi{
+ width:220px;height:220px;position:relative;
+ transform-origin:center bottom;
+}
+.mochi svg{width:100%;height:100%;overflow:visible}
+.cat-outline{
+ fill:#fffdfb;stroke:var(--brown);stroke-width:5;
+ stroke-linecap:round;stroke-linejoin:round;
+}
+.cat-pink{fill:#f5a99d}
+.cat-cheek{fill:#f8c5bd;opacity:.85}
+.cat-eye{fill:#56301f}
+.cat-mouth{fill:none;stroke:#56301f;stroke-width:3;stroke-linecap:round}
+.cat-tail{
+ fill:#fffdfb;stroke:var(--brown);stroke-width:5;
+ stroke-linecap:round;stroke-linejoin:round;
+}
+.cake{display:none}
+.mochi.cake-cat .cake{display:block}
+.mochi.wave{animation:wave 1.5s ease-in-out infinite}
+.mochi.jump{animation:jump 1s ease-in-out infinite}
+.mochi.sleep{animation:sleep 3s ease-in-out infinite}
+.mochi.dance{animation:dance .8s ease-in-out infinite}
+.mochi.spin{animation:spin 3s ease-in-out infinite}
+.mochi.celebrate{animation:celebrate .7s ease-in-out infinite}
+.mochi.sit{animation:sit 2s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-9deg) translateY(-5px)}75%{transform:rotate(9deg) translateY(-5px)}}
+@keyframes jump{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
+@keyframes sleep{0%,100%{transform:rotate(0) translateY(5px)}50%{transform:rotate(8deg) translateY(10px)}}
+@keyframes dance{0%,100%{transform:rotate(-12deg) translateY(0)}50%{transform:rotate(12deg) translateY(-12px)}}
+@keyframes spin{0%,100%{transform:rotate(0)}50%{transform:rotate(360deg)}}
+@keyframes celebrate{0%,100%{transform:scale(1) rotate(-5deg)}50%{transform:scale(1.1) rotate(5deg)}}
+@keyframes sit{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* Little floating hearts around cats */
+.heart{position:absolute;color:#ec91b8;font-size:23px;animation:heart 2s infinite}
+.heart.one{left:0;top:40px}.heart.two{right:0;top:65px;animation-delay:.8s}
+@keyframes heart{50%{transform:translateY(-13px) scale(1.3);opacity:.5}}
+
+/* BALLOONS */
+.balloon-area{display:flex;justify-content:center;flex-wrap:wrap;gap:22px;margin:30px}
+.balloon{
+ width:80px;height:100px;border-radius:50%;
+ font-size:28px;animation:balloon 2s ease-in-out infinite;
+ position:relative;padding:0;
+}
+.balloon:after{
+ content:"";position:absolute;top:98px;left:50%;
+ height:45px;border-left:2px solid #d9a0bb;
+}
+.balloon:nth-child(1){background:#f7b6d3}
+.balloon:nth-child(2){background:#d9c3ff;animation-delay:.4s}
+.balloon:nth-child(3){background:#ffcfb9;animation-delay:.8s}
+.balloon:nth-child(4){background:#c5e9dc;animation-delay:1.2s}
+@keyframes balloon{50%{transform:translateY(-15px) rotate(5deg)}}
+#balloonMessage{min-height:70px;color:#c15d91;font-weight:bold;font-size:20px}
+.sparkle{font-size:25px;color:#e9a0c1;animation:glow 1.5s infinite alternate}
+@keyframes glow{to{opacity:.4;transform:scale(1.1)}}
+
+.nav{
+ display:none;position:fixed;bottom:10px;left:0;width:100%;
+ justify-content:center;align-items:center;z-index:10;
+}
+.nav button{margin:4px;padding:11px 18px}
+.page-number{font-size:14px;color:#b66f92;margin:5px}
+.small{font-size:14px;color:#b67b98}
+@media(max-width:500px){
+ .gallery img{width:42%;height:160px}
+ .balloon{width:65px;height:85px}
+ .cat-wrap{transform:scale(.9);margin-top:0;margin-bottom:0}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="birthdaySong" loop preload="auto">
+ <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- REUSABLE MOCHI CAT DRAWING -->
+<template id="catTemplate">
+ <svg viewBox="0 0 220 220" role="img" aria-label="Cute white Mochi cat">
+  <!-- Tail -->
+  <path class="cat-tail" d="M143 174 Q190 185 194 164 Q201 150 211 160 Q220 178 194 188 Q165 202 139 188"/>
+  <!-- Body -->
+  <path class="cat-outline" d="M70 135 Q48 147 52 181 Q55 211 83 207 Q99 203 100 190 L133 190 Q135 207 158 207 Q181 207 176 178 Q173 145 148 133"/>
+  <!-- Ears -->
+  <path class="cat-outline" d="M36 92 Q25 34 49 36 Q73 37 87 53 Q111 42 137 52 Q158 34 182 40 Q203 48 185 101"/>
+  <!-- Head -->
+  <path class="cat-outline" d="M34 91 Q35 48 83 47 Q119 30 155 49 Q190 58 188 99 Q193 148 157 157 Q111 169 67 155 Q27 143 34 91Z"/>
+  <!-- Inner ears -->
+  <path class="cat-pink" d="M42 48 Q50 43 70 59 L48 74Z"/>
+  <path class="cat-pink" d="M158 59 Q179 43 191 53 L178 79Z"/>
+  <!-- Face -->
+  <ellipse class="cat-cheek" cx="62" cy="112" rx="10" ry="7"/>
+  <ellipse class="cat-cheek" cx="159" cy="112" rx="10" ry="7"/>
+  <ellipse class="cat-eye" cx="81" cy="101" rx="6" ry="8"/>
+  <ellipse class="cat-eye" cx="140" cy="101" rx="6" ry="8"/>
+  <path class="cat-mouth" d="M99 108 Q110 120 120 108 M110 115 Q105 124 99 117 M110 115 Q116 124 122 117"/>
+  <!-- Front paws -->
+  <path class="cat-outline" d="M72 151 Q69 170 85 174 Q99 176 103 157"/>
+  <path class="cat-outline" d="M117 157 Q123 176 139 174 Q154 170 148 151"/>
+  <!-- Tiny pink nose -->
+  <ellipse class="cat-pink" cx="110" cy="109" rx="3" ry="2"/>
+  <!-- Cake -->
+  <g class="cake">
+   <ellipse cx="110" cy="145" rx="58" ry="10" fill="#ffe7a7" stroke="#593522" stroke-width="3"/>
+   <path d="M63 119 Q110 104 157 119 L151 147 Q110 161 69 147Z" fill="#f8d98d" stroke="#593522" stroke-width="3"/>
+   <path d="M63 119 Q110 104 157 119 Q154 131 143 128 Q130 125 121 132 Q108 138 97 130 Q80 124 70 132Z" fill="#f4a7c7" stroke="#593522" stroke-width="3"/>
+   <circle cx="83" cy="119" r="3" fill="#d76f91"/>
+   <circle cx="110" cy="116" r="3" fill="#d76f91"/>
+   <circle cx="137" cy="119" r="3" fill="#d76f91"/>
+   <path d="M110 105 L110 91" stroke="#593522" stroke-width="3"/>
+   <path d="M110 91 Q101 82 108 77 Q117 82 110 91" fill="#ffcf6e"/>
+  </g>
+ </svg>
+</template>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+ <span class="float f1">🎀</span><span class="float f2">🌸</span>
+ <span class="float f3">💗</span><span class="float f4">🦋</span>
+ <div class="cat-wrap" data-cat="wave"></div>
+ <h1>A Little Surprise for You!</h1>
+ <p>A special advance birthday surprise is waiting for someone very special...</p>
+ <div class="card">
+  <h2>🔐 Enter Your Password</h2>
+  <input id="passwordInput" type="password" placeholder="Enter secret password">
+  <br>
+  <button onclick="unlockWebsite()">Open My Surprise 💗</button>
+  <p id="passwordError" style="color:#d75b83"></p>
+  <p class="small">Only the birthday boy knows the secret! 🎂</p>
+ </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+ <span class="float f1">🌷</span><span class="float f2">💞</span>
+ <div class="cat-wrap" data-cat="wave"></div>
+ <h1>Advance Happy Birthday, Muneeb! 🎂</h1>
+ <div class="card">
+  <p>Your birthday is coming, and I couldn't wait to make you feel special!</p>
+  <h2>My favourite birthday boy! 💗</h2>
+  <p>May your days be filled with happiness, laughter and beautiful surprises.</p>
+ </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+ <span class="float f1">💐</span><span class="float f2">⭐</span>
+ <div class="cat-wrap" data-cat="jump"></div>
+ <h1>A Little Birthday Letter 💌</h1>
+ <div class="card">
+  <p>Dear Muneeb, your special day is almost here! I hope your coming year brings you countless reasons to smile.</p>
+  <p>Keep shining, keep growing and never stop believing in yourself. You deserve all the beautiful things in life. 💕</p>
+ </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+ <span class="float f1">🎀</span><span class="float f2">🦋</span>
+ <h1>Pop a Balloon! 🎈</h1>
+ <p>Har balloon mein tumhare liye ek cute sa message hai!</p>
+ <div class="balloon-area">
+  <button class="balloon" onclick="popBalloon(0)">💗</button>
+  <button class="balloon" onclick="popBalloon(1)">💜</button>
+  <button class="balloon" onclick="popBalloon(2)">🧡</button>
+  <button class="balloon" onclick="popBalloon(3)">💚</button>
+ </div>
+ <div class="card" id="balloonMessage">Choose any balloon to reveal your message! 💌</div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="page5">
+ <span class="float f1">🌸</span><span class="float f2">💗</span>
+ <div class="cat-wrap" data-cat="sleep"></div>
+ <h1>My Cutie Pie, My Gulaboo! 💕</h1>
+ <p>A little collection of your favourite moments.</p>
+ <div class="gallery">
+  <img src="img1.jpg" alt="Photo 1">
+  <img src="img2.jpg" alt="Photo 2">
+  <img src="img3.jpg" alt="Photo 3">
+  <img src="img4.jpg" alt="Photo 4">
+ </div>
+ <p>My sweet Gulaboo! 🥹💗</p>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page" id="page6">
+ <span class="float f1">🌼</span><span class="float f2">💫</span>
+ <div class="cat-wrap" data-cat="wave"></div>
+ <h1>My Wishes for You 🌷</h1>
+ <div class="card">
+  <p>May your life always be full of peace.</p>
+  <p>May success find you everywhere.</p>
+  <p>May your smile never fade.</p>
+  <p>May every wish in your heart come true. 💗</p>
+ </div>
+</section>
+
+<!-- PAGE 7 -->
+<section class="page" id="page7">
+ <span class="float f1">🌹</span><span class="float f2">🦋</span>
+ <div class="cat-wrap" data-cat="dance"></div>
+ <h1>Let's Celebrate! 🎉</h1>
+ <div class="card">
+  <h2>It's Almost Your Day!</h2>
+  <p>Smile a little bigger, laugh a little louder and enjoy every moment.</p>
+  <div class="sparkle">✦ ✧ ✦ ✧ ✦</div>
+ </div>
+</section>
+
+<!-- PAGE 8 -->
+<section class="page" id="page8">
+ <span class="float f1">💌</span><span class="float f2">🌸</span>
+ <div class="cat-wrap" data-cat="sit"></div>
+ <h1>A Sweet Reminder 💕</h1>
+ <div class="card">
+  <p>Never forget how capable, valuable and amazing you are.</p>
+  <p>Even on difficult days, remember that brighter days are waiting for you.</p>
+  <h2>Believe in yourself! ✨</h2>
+ </div>
+</section>
+
+<!-- PAGE 9 -->
+<section class="page" id="page9">
+ <span class="float f1">⭐</span><span class="float f2">🎀</span>
+ <div class="cat-wrap" data-cat="spin"></div>
+ <h1>Make a Birthday Wish! ✨</h1>
+ <div class="card">
+  <p>Close your eyes, make a wish and imagine all the beautiful things coming your way.</p>
+  <h2>One, two, three... make a wish! 🌟</h2>
+ </div>
+</section>
+
+<!-- PAGE 10 -->
+<section class="page" id="page10">
+ <span class="float f1">🌷</span><span class="float f2">💗</span>
+ <div class="cat-wrap" data-cat="jump"></div>
+ <h1>More Happiness Ahead! 🌈</h1>
+ <div class="card">
+  <p>A new age means new adventures, new opportunities and new memories.</p>
+  <p>I hope this year becomes one of your favourite chapters. 💞</p>
+ </div>
+</section>
+
+<!-- PAGE 11 -->
+<section class="page" id="page11">
+ <span class="float f1">🧁</span><span class="float f2">🎈</span>
+ <div class="cat-wrap" data-cat="celebrate" data-cake="yes"></div>
+ <h1>A Cake Just for You! 🎂</h1>
+ <div class="card">
+  <p>Our little Mochi has brought you a birthday cake!</p>
+  <h2>Sending you lots of hugs, Bugga! 🥰</h2>
+ </div>
+</section>
+
+<!-- PAGE 12 -->
+<section class="page" id="page12">
+ <span class="float f1">🎂</span><span class="float f2">🌸</span>
+ <div class="cat-wrap" data-cat="celebrate" data-cake="yes"></div>
+ <h1>Advance Birthday Wishes, Gulaboo! 🎀</h1>
+ <div class="card">
+  <h2>Happy Advance Birthday, Muneeb! 💗</h2>
+  <p>May your future be as lovely as this little surprise. May your smile always stay bright and your dreams become reality.</p>
+  <p>Lots of love and best wishes! 🌷</p>
+  <div class="sparkle">♡ ✧ ♡ ✧ ♡</div>
+ </div>
+ <button onclick="goToPage(1)">Replay the Surprise ↻</button>
+</section>
+
+<div class="nav" id="navigation">
+ <button onclick="changePage(-1)">← Back</button>
+ <span class="page-number" id="pageNumber">Page 2 / 12</span>
+ <button onclick="changePage(1)">Next →</button>
+</div>
+
+<script>
+const PASSWORD = "muneeb123";
+let currentPage = 1;
+const totalPages = 12;
+
+function createCat(slot){
+ const template = document.getElementById("catTemplate");
+ const move = slot.dataset.cat || "sit";
+ const cat = document.createElement("div");
+ cat.className = "mochi " + move;
+ if(slot.dataset.cake === "yes") cat.classList.add("cake-cat");
+ cat.appendChild(template.content.cloneNode(true));
+
+ slot.innerHTML = "";
+ const heart1 = document.createElement("span");
+ heart1.className = "heart one";
+ heart1.textContent = "♡";
+ const heart2 = document.createElement("span");
+ heart2.className = "heart two";
+ heart2.textContent = "✦";
+ slot.classList.add("cat-wrap");
+ slot.append(heart1,cat,heart2);
+}
+
+document.querySelectorAll("[data-cat]").forEach(createCat);
+
+function unlockWebsite(){
+ const value = document.getElementById("passwordInput").value;
+ const error = document.getElementById("passwordError");
+
+ if(value === PASSWORD){
+  error.textContent = "";
+  document.getElementById("navigation").style.display = "flex";
+  goToPage(2);
+  const song = document.getElementById("birthdaySong");
+  song.play().catch(()=> {
+   error.textContent = "If music doesn't start, tap the page once.";
+  });
+ }else{
+  error.textContent = "Oops! Wrong password. Try again 💗";
+ }
+}
+
+document.getElementById("passwordInput").addEventListener("keydown",e=>{
+ if(e.key === "Enter") unlockWebsite();
+});
+
+function goToPage(number){
+ if(number < 1 || number > totalPages) return;
+ currentPage = number;
+
+ document.querySelectorAll(".page").forEach(page=>{
+  page.classList.remove("active");
+ });
+ document.getElementById("page"+number).classList.add("active");
+
+ document.getElementById("navigation").style.display =
+  number === 1 ? "none" : "flex";
+
+ document.getElementById("pageNumber").textContent =
+  "Page " + number + " / " + totalPages;
+
+ if(number === 1) resetBalloons();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function changePage(direction){
+ goToPage(currentPage + direction);
+}
+
+const messages = [
+ "You deserve all the happiness in the world, Gulaboo! 💗",
+ "Keep smiling, because your smile is special! 💜",
+ "May every dream of yours come true! 🧡",
+ "Sending you the biggest virtual birthday hug! 💚"
+];
+const balloonColors = ["💗","💜","🧡","💚"];
+
+function popBalloon(index){
+ const balloons = document.querySelectorAll(".balloon");
+ document.getElementById("balloonMessage").textContent = messages[index];
+ balloons[index].textContent = "✨";
+ balloons[index].style.opacity = ".45";
+ balloons[index].disabled = true;
+}
+
+function resetBalloons(){
+ document.querySelectorAll(".balloon").forEach((b,i)=>{
+  b.textContent = balloonColors[i];
+  b.style.opacity = "1";
+  b.disabled = false;
+ });
+ document.getElementById("balloonMessage").textContent =
+  "Choose any balloon to reveal your message! 💌";
+}
+</script>
+
+</body>
+</html>
